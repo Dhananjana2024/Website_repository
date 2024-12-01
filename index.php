@@ -17,8 +17,8 @@
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 "> 
       <li><a href="#" class="nav-link" style="color:white;" >Home</a></li>
-      <li><a href="News.php" class="nav-link" style="color:white;" >News</a></li>
-      <li><a href="Home.php" class="nav-link" style="color:white;" >Contact</a></li>
+      <li><a href="#" class="nav-link" style="color:white;" >News</a></li>
+      <li><a href="#" class="nav-link" style="color:white;" >Contact</a></li>
       <li><a href="#" class="nav-link" style="color:white;" >Location</a></li>
       <li><a href="#" class="nav-link" style="color:white;" >About us</a></li>
     </ul>
@@ -31,8 +31,8 @@
     <h1>GLOBAL WEATHER iNfO</h1>
     <p>This is my first page that i create for my weather web site </p>
     <div>
-      <button type="button"><span></span>Login</button>
-      <button type="button"><span></span>Registration</button>
+      <a href="login.php"><button type="button"><span></span>Login</button></a>
+      <a href="Register.php"><button type="button"><span></span>Registration</button></a>
     </div>
   </div>
   
