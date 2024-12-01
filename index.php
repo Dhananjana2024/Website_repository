@@ -12,7 +12,7 @@
 
   <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 ">
     <div class="col-md-3 mb-2 mb-md-0">
-    <img src="resouses/Images/logo.png" width="100" height="50" role="img"  alt="logo" style="margin-left: 20px;">
+    <img src="Resources/Images/logo.png" width="100" height="50" role="img"  alt="logo" style="margin-left: 20px;">
     </div>
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 "> 
@@ -25,7 +25,7 @@
   </header>
 
   <!-- Video Background -->
-  <video src="resouses/video/video.mp4" class="video-background" autoplay muted loop></video>
+  <video src="Resources/video/video.mp4" class="video-background" autoplay muted loop></video>
   
   <div class="content">
     <h1>GLOBAL WEATHER iNfO</h1>
