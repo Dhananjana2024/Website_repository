@@ -25,23 +25,22 @@
                 </svg>
             </div>
             <div class="input-box">
-                <input type="Text" name="UserEmail" id="UserEmail" placeholder=" Enter your E-mail" required>
+                <input type="Text" name="userEmail" id="userEmail" placeholder=" Enter your E-mail" required>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
                 </svg>
             </div>
             <div class="input-box">
-                <input type="Text" name="UserMobile" id="UserMobile" placeholder=" Enter your Mobile Number" required>
+                <input type="Text" name="userMobile" id="userMobile" placeholder=" Enter your Mobile Number" required>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
                 </svg>
             </div>
             
-
-            <div class="remember-forgot">
-                <label><input type="checkbox">Remember me</label>
+            <button type="submit" class="btn">Register</button>
+            <div class="register-link">
+                <p>Already have an account? <a href="login.php">Login Here</a></p>
             </div>
-            <button type="submit" class="btn">Login</button>
             
         </form>
     </div>

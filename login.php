@@ -11,7 +11,7 @@
 <body>
     <div class="wrapper">
         <form action="">
-            <h1>Login in</h1>
+            <h1>Login </h1>
             <div class="input-box">
                 <input type="text" placeholder=" Enter your Username" required>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
