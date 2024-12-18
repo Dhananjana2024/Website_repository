@@ -42,48 +42,57 @@ function userRegistration($userName,$userEmail,$userPassword,$userMobile,$userNI
 }
 
 //login function
-function Authentication($UserName,$UserPassword){
-    //call database connection
-    $db_conn = Connection();
-    $sqlFetchUser = "SELECT * FROM login_table WHERE login_email = '$UserName';";
-    $sqlResult = mysqli_query($db_conn,$sqlFetchUser);
+function Authentication($UserName, $UserPassword) {
+  // Call database connection
+  $db_conn = Connection();
+  $sqlFetchUser = "SELECT * FROM login_table WHERE login_email = '$UserName';";
+  $sqlResult = mysqli_query($db_conn, $sqlFetchUser);
 
-   //check database connection errors
-   if(mysqli_connect_errno()){                
-    echo(mysqli_connect_error());
-}  
-   //convert user password into a hash value
-   $newpassword = MD5($UserPassword);
+  // Check for connection errors
+  if (mysqli_connect_errno()) {                
+      echo(mysqli_connect_error());
+  }  
 
-   //check the number of the rows
-   $norows = mysqli_num_rows($sqlResult);
+  // Convert user password into a hash value
+  $newpassword = md5($UserPassword);
 
-   //validating the number of records > 0 or not
-   if($norows > 0){
-     //fatch the user records
-     $rec = mysqli_fetch_assoc($sqlResult);
+  // Check the number of rows
+  $norows = mysqli_num_rows($sqlResult);
 
-     //validate the password
-     if($rec['login_password'] == $newpassword){
-        //validate the user login status
-        if($rec['login_status'] == 1){
-          if($rec['login_role']== "admin"){
-            //redirect this user into the admin dashboard
-            header("location:library/views/dashboards/admin.php");
-          }else{
-            //redirect this user into the user dashboard
-            header("location:library/views/dashboards/user.php");
+  // Validating the number of records > 0 or not
+  if ($norows > 0) {
+      // Fetch the user records
+      $rec = mysqli_fetch_assoc($sqlResult);
+
+      // Validate the password
+      if ($rec['login_password'] == $newpassword) {
+          // Validate the user login status
+          if ($rec['login_status'] == 1) {
+              session_start();
+              
+              // Fetch user details
+              $sqlFetchUserDetails = "SELECT * FROM user_table WHERE user_email = '$UserName';";
+              $userDetailsResult = mysqli_query($db_conn, $sqlFetchUserDetails);
+              $userDetails = mysqli_fetch_assoc($userDetailsResult);
+
+              // Store user details in session
+              $_SESSION['user'] = $userDetails;
+
+              // Redirect user based on role
+              if ($rec['login_role'] == "admin") {
+                  header("location:library/views/dashboards/admin.php");
+              } else {
+                  header("location:library/views/dashboards/user.php");
+              }
+          } else {
+              return "Your Account Has Been Deactivated";
           }
-        }else{
-            return("Your Accout Has Been Diactivated");
-        }
-     }else{
-        return("Your Password Is Not Correct! Please Try Again");
-     }
-   }else{
-    return("No Recods Are Found");
-   }
-    
+      } else {
+          return "Your Password Is Incorrect! Please Try Again";
+      }
+  } else {
+      return "No Records Found";
+  }
 }
 
 

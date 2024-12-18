@@ -9,41 +9,8 @@ if(isset($_POST['btnbutton'])){
 
 ?>
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/weather.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-
-  <body style="background:#87CEEB;">
-
-    <!-- ----------------nav bar----------------- -->
-    <div class="container-fluid" style="background:#4682B4;">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 navbar">
-        <div class="col-md-3 mb-2 mb-md-0">
-            <img src="Resources/Images/logo.png" alt="Logo_image" width="100" height="50">    
-        </div>
-
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav-items">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-
-        <div class="col-md-3 text-end">
-            <button type="button" class="btn me-2" data-bs-toggle="modal" data-bs-target="#modalSignin" style="background-color: #87CEEB; color: white; border: none; width: 100px; height: 50px;">
-                Login
-            </button>
-        </div>
-        </header>
-    </div>
+<?php include 'partails/Index/header.php';?>
+<?php include 'partails/Index/navbar.php';?>
 
     
     <!-- --------------Sign In Modal-------------- -->
@@ -124,11 +91,9 @@ if(isset($_POST['btnbutton'])){
         </div>
     </div>
 
-    <div class="col-md-6">
-
-    </div>
     
-    <script src="css/weather.css"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
-</html>
+
+    <script src="js/weather.js"></script>
+
+
+<?php include 'partails/Index/footer.php';?>
