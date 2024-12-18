@@ -93,7 +93,8 @@ if(isset($_POST['btnbutton'])){
 
     
 
-    <script src="js/weather.js"></script>
+    
+
 
 
 <?php include 'partails/Index/footer.php';?>

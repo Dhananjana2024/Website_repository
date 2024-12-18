@@ -31,8 +31,9 @@ function userRegistration($userName,$userEmail,$userPassword,$userMobile,$userNI
     if(mysqli_connect_errno()){
         echo(mysqli_connect_error());
     }
-    echo "<script>
+    echo"<script>
     alert('Your Registration Success!');
+    window.location.href = '../../../index.php';
     </script>";
     
 }else{
@@ -91,9 +92,49 @@ function Authentication($UserName, $UserPassword) {
           return "Your Password Is Incorrect! Please Try Again";
       }
   } else {
-      return "No Records Found";
+    echo "<script>
+    alert('No Records Found');
+    </script>";
   }
 }
+
+
+
+//Update function
+function updateUser($userId, $userName, $userEmail, $userMobile, $userNIC) {
+    $db_conn = Connection();
+    
+    $updateSql = "UPDATE user_table SET 
+                    user_name = '$userName',
+                    user_email = '$userEmail',
+                    user_mobile = '$userMobile',
+                    user_nic = '$userNIC'
+                  WHERE id = $userId;";
+    $result = mysqli_query($db_conn, $updateSql);
+
+    if ($result) {
+        return "User Updated Successfully!";
+    } else {
+        return "Error Updating User: " . mysqli_error($db_conn);
+    }
+}
+
+
+//Delete function
+function deleteUser($userId) {
+    $db_conn = Connection();
+    
+    $deleteSql = "DELETE FROM user_table WHERE id = $userId;";
+    $result = mysqli_query($db_conn, $deleteSql);
+
+    if ($result) {
+        return "User Deleted Successfully!";
+    } else {
+        return "Error Deleting User: " . mysqli_error($db_conn);
+    }
+}
+
+
 
 
 

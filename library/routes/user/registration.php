@@ -8,4 +8,4 @@ $_POST['UserMobile'],$_POST['UserNIC']);
 echo($result);
 
 
-?>
+?>  

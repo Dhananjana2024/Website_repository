@@ -7,7 +7,7 @@ function Connection(){
 
     $password = ""; //database password
 
-    $db_name = "wsbd"; //database name
+    $db_name = "weatherdb"; //database name
 
     //create a database connection
     $conn = mysqli_connect($server,$user,$password,$db_name);
