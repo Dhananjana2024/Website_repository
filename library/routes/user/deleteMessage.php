@@ -9,9 +9,9 @@ if (isset($_GET['id'])) {
     // Delete query
     $sql = "DELETE FROM message_table WHERE id = $messageId";
     if (mysqli_query($db_conn, $sql)) {
-        $_SESSION['success'] = "Message deleted successfully.";
+        $_SESSION['success'] ="" ;
     } else {
-        $_SESSION['error'] = "Error deleting message: " . mysqli_error($db_conn);
+        $_SESSION['error'] =  . mysqli_error($db_conn);
     }
 }
 

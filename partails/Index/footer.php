@@ -6,7 +6,7 @@
                 <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                <li class="nav-item mb-2"><a href="contact/contact.php" class="nav-link p-0 text-body-secondary">Contact</a></li>
+                <li class="nav-item mb-2"><a href="../contact/contact.php" class="nav-link p-0 text-body-secondary">Contact</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
                 </ul>

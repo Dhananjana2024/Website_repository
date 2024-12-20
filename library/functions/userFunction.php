@@ -37,7 +37,9 @@ function userRegistration($userName,$userEmail,$userPassword,$userMobile,$userNI
     </script>";
     
 }else{
-    return("Please Try Again!");
+    echo"<script>
+    alert('Please Try Again!!');
+    </script>";
 }
 
 }
@@ -86,10 +88,14 @@ function Authentication($UserName, $UserPassword) {
                   header("location:library/views/dashboards/user.php");
               }
           } else {
-              return "Your Account Has Been Deactivated";
+            echo"<script>
+            alert('Your Account Has Been Deactivated.!');
+            </script>";
           }
       } else {
-          return "Your Password Is Incorrect! Please Try Again";
+        echo"<script>
+        alert('Your Password Is Incorrect! Please Try Again.!');
+        </script>";
       }
   } else {
     echo "<script>
@@ -113,9 +119,13 @@ function updateUser($userId, $userName, $userEmail, $userMobile, $userNIC) {
     $result = mysqli_query($db_conn, $updateSql);
 
     if ($result) {
-        return "User Updated Successfully!";
+        echo "<script>
+        alert('User Updated Successfully!');
+        </script>";
     } else {
-        return "Error Updating User: " . mysqli_error($db_conn);
+        echo "<script>
+        alert('Error Updating User.!');
+        </script>". mysqli_error($db_conn);
     }
 }
 
@@ -128,11 +138,18 @@ function deleteUser($userId) {
     $result = mysqli_query($db_conn, $deleteSql);
 
     if ($result) {
-        return "User Deleted Successfully!";
+        echo "<script>
+        alert('User Deleted Successfully!');
+        </script>";
     } else {
-        return "Error Deleting User: " . mysqli_error($db_conn);
+        echo "<script>
+        alert('Error Deleting User.!');
+        </script>". mysqli_error($db_conn);
     }
 }
+
+
+
 
 
 
